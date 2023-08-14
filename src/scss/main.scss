@@ -33,9 +33,52 @@ hr.separate {
 
 }
 
+.groupTest{
+    height: auto;
+    .card-tema{
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        .card-body{
+            position: absolute;
+            h6{
+                z-index: 999;
+            }
+            img{
+                width: 150px;
+                object-fit: cover;
+                opacity: 0.5;
+                transform: scale(1);
+                image-rendering: auto;
+                background-size: cover; 
+                background-repeat: no-repeat; 
+                background-position: center;
+                transition: all 0.5s ease;
+            }
+            img:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.selectTema{
+    outline: $blueFuture solid;
+}
+
+
+
 .dataImage{
+    background-image: url("../img/cuestionario.avif");
     height: 100vh;
     image-rendering: auto;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
 }
 
 .dataCuestionario{
@@ -154,4 +197,12 @@ hr.separate {
     }
     
 }
+
+
+@media (max-width: 767px) {
+    .dataImage{
+        display: none !important;
+    }
+  }
+
 

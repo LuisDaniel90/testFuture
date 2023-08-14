@@ -71,7 +71,28 @@ if (!isset($_SESSION['nameUser'])) {
 
     <div class="row w-100 text-center d-flex justify-content-center">
         <div class="col-3">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                class="btn btn-primary details">Detalles</button>
             <button type="button" class="btn btn-danger closeSession">Finalizar</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="accordion accordion-flush" id="accordionDetails">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
         </div>
     </div>
 

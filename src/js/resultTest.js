@@ -64,17 +64,22 @@ const putDataResult = () =>{
       // console.log('beforeSend')
     },
     success: function (response) {
+      let trueCount = "";
       resp = JSON.parse(response);
       if (resp.error === false) {
         const countDataResults = Object.keys(resp.dataResult).length - 1;
+        let dataCuestionario = localStorage.getItem('temaFuture');
+        details(resp.dataResult);
+        let nameTest = document.querySelector(".nameTest");
         let timeTest = document.querySelector(".timeTest");
         let respTest = document.querySelector(".respTest");
         let winnerData = document.querySelector(".winnerData");
+        nameTest.textContent = dataCuestionario
         timeTest.textContent = resp.dataResult.time;
         respTest.textContent = countDataResults;
-        let trueCount = 0;
+        
         Object.values(resp.dataResult).forEach(obj => {
-          if (obj.responseTrue === 'true') {
+          if (obj.idresponseTrue == 'true') {
             trueCount++;
           }
         });
@@ -83,7 +88,6 @@ const putDataResult = () =>{
         else if (trueCount == 3) { textValue = "intermedio " + trueCount * 100 }
         else if (trueCount == 4) { textValue = "alto " + trueCount * 100 }
         else{ textValue = "superior " + trueCount * 100;
-
         }
         winnerData.textContent = textValue;
 
@@ -103,6 +107,48 @@ const putDataResult = () =>{
 const completeTest = document.getElementById('completeTest');
 if (completeTest) {
   putDataResult();
+}
+
+function details(dataDetails) {
+
+  const accordionContainer = document.getElementById('accordionDetails');
+
+  Object.keys(dataDetails).forEach((key, index) => {
+    const respuesta = dataDetails[key];
+    const preguntaIndex = index + 1;
+
+  const accordionItem = document.createElement('div');
+  accordionItem.className = 'accordion-item';
+
+  const accordionHeader = document.createElement('h2');
+  accordionHeader.className = 'accordion-header';
+  
+  const accordionButton = document.createElement('button');
+  accordionButton.className = 'accordion-button collapsed';
+  accordionButton.type = 'button';
+  accordionButton.setAttribute('data-bs-toggle', 'collapse');
+  accordionButton.setAttribute('data-bs-target', `#flush-collapse-${preguntaIndex}`);
+  accordionButton.setAttribute('aria-expanded', 'false');
+  accordionButton.setAttribute('aria-controls', `flush-collapse-${preguntaIndex}`);
+  accordionButton.textContent = `Pregunta ${preguntaIndex}`;
+
+  const accordionCollapse = document.createElement('div');
+  accordionCollapse.id = `flush-collapse-${preguntaIndex}`;
+  accordionCollapse.className = 'accordion-collapse collapse';
+  accordionCollapse.setAttribute('data-bs-parent', '#accordionFlushExample');
+
+  const accordionBody = document.createElement('div');
+  accordionBody.className = 'accordion-body';
+  accordionBody.textContent = `Respuesta Verdadera: ${respuesta.responseSystemTrue}
+Respuesta Seleccionada: ${respuesta.responseUserSelect}`;
+
+  accordionCollapse.appendChild(accordionBody);
+  accordionHeader.appendChild(accordionButton);
+  accordionItem.appendChild(accordionHeader);
+  accordionItem.appendChild(accordionCollapse);
+  accordionContainer.appendChild(accordionItem);
+});
+  
 }
 
 

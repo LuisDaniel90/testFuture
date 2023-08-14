@@ -24,8 +24,8 @@ if (isset($_SESSION['nameUser'])) {
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-8">
-        <div class="dataCuestionario m-5 p-5">
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="dataCuestionario mt-5">
           <h1 class="text-center">Cuestionario</h1>
           <hr class="separate" />
           <div class="row d-flex justify-content-center">
@@ -39,10 +39,42 @@ if (isset($_SESSION['nameUser'])) {
               </div>
             </div>
           </div>
-          <div class="container mt-5 text-center">
+          <div class="container">
+            <div class="row groupTest mt-3">
+              <div class="col-md-4 col-sm-12">
+                <div class="card card-tema" data-tema="Mantenimiento">
+                  <div class="card-body p-0">
+                    <img src="./src/img/mantenimiento.avif" alt="">
+                    <h6 class="card-title text-center"><strong>Mantenimiento</strong></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <div class="card card-tema" data-tema="Word">
+                  <div class="card-body p-0">
+                    <img src="./src/img/word.jpg" alt="">
+                    <h6 class="card-title text-center"><strong>Word</strong></h6>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <div class="card card-tema" data-tema="Excel">
+                  <div class="card-body p-0">
+                    <img src="./src/img/excel.avif" alt="">
+                    <h6 class="card-title text-center"><strong>Excel</strong></h6>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="container mt-2 text-center">
             <div class="row d-flex justify-content-center">
               <div class="col-6">
-                <form class="pr-5 pl-5" id="dataForm">
+                <form id="dataForm">
                   <div class="form-group">
                     <input type="text" class="form-control" id="dataName" name="dataName"
                       placeholder="Escribe tu nombre" autocomplete="off" />
@@ -56,12 +88,10 @@ if (isset($_SESSION['nameUser'])) {
               </div>
             </div>
           </div>
+
         </div>
       </div>
-      <div class="col-4 d-flex align-items-end justify-content-end m-0 p-0">
-        <picture>
-          <img class="dataImage" src="src/img/cuestionario.avif" alt="" />
-        </picture>
+      <div class="col-4 d-lg-flex d-md-flex align-items-end justify-content-end m-0 p-0 dataImage  d-none d-sm-block">
       </div>
     </div>
   </div>

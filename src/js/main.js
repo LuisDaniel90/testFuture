@@ -1,5 +1,6 @@
 const dataTest = document.querySelector("#dataTest");
 const finishSend = document.querySelector("#finishSend");
+const selectedTema = "";
 if (dataTest || finishSend) {
     dataTest.addEventListener("submit", (event) =>finishTest(event));
 }
@@ -122,7 +123,8 @@ function mostrarPregunta(preguntaIndex) {
     fetch('../object.json')
       .then(response => response.json())
       .then(data => {
-        temaSelect = data.temas.find(tema => tema.nombre === 'Excel');
+        const temaSaved = localStorage.getItem('temaFuture');
+        temaSelect = data.temas.find(tema => tema.nombre === temaSaved );
         mostrarPregunta(preguntaActualIndex);
         
         prevQuestionLink.addEventListener('click', () => {
@@ -155,19 +157,32 @@ function mostrarPregunta(preguntaIndex) {
 const selectOption = (event,opcionesRespuesta) => {
     event.preventDefault();
     let selectData = event.currentTarget;
+    let selectOptionTrue = "";
+    let responseAnswerTrue = "";
     opcionesRespuesta.forEach((option) => {
+        selectOptionTrue = option.querySelector('.card[data-answer="true"]');
+        if (selectOptionTrue) {
+            responseAnswerTrue = selectOptionTrue.querySelector(".card-text");
+        }
+        
         option.querySelector(".card").classList.remove("selectoption");
+        
     });
 
     selectData.classList.toggle("selectoption");
 
     let responseUser = selectData.getAttribute( "data-response" );
+    let responseContainUser = selectData.querySelector(".card-text");
     let responseTrue = selectData.getAttribute( "data-answer" );
     dataFull[preguntaActualIndex] = {
-        "responseTrue" : responseTrue,
-        "responseUser" : responseUser,
+        "idresponseTrue" : responseTrue,
+        "responseUserSelect" : responseContainUser.textContent,
+        "idResponseUser" : responseUser,
+        "responseSystemTrue" : responseAnswerTrue.textContent
     };
     dataFull["time"] = timeFull;
+
+    console.log(dataFull)
 
 
     if (dataFull.length == 5) {
@@ -181,7 +196,7 @@ const selectOption = (event,opcionesRespuesta) => {
 
 const timerElement = document.querySelector('.dataTime');
 const countdownElement = document.getElementById('countdown');
-const SelectMinuts = 1;
+const SelectMinuts = 15;
 const targetTime = new Date().getTime() + SelectMinuts * 60 * 1000;
 let timeFull = null
 
@@ -203,12 +218,26 @@ function updateCountdown() {
   }
   
   // Actualizar el temporizador cada segundo
-
+  let interval = "";
   if (questionArticle) {
     cargarTemas();
     updateCountdown();
-    let interval = setInterval(updateCountdown, 1000);
+    interval = setInterval(updateCountdown, 1000);
   }
   
-  
+  let cardTemas = document.querySelectorAll(".card-tema");
+  if (cardTemas) {
+    cardTemas.forEach(button => button.addEventListener('click', (event) => selectTema(event)));
+  }
+  const selectTema = (event) =>{
+    const button = event.currentTarget;
+    const elementTema = button.dataset.tema;
+    cardTemas.forEach((option) => {
+        option.classList.remove("selectTema");
+    });
+
+    button.classList.toggle("selectTema");
+    localStorage.setItem('temaFuture', elementTema);
+    
+  }
 

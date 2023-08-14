@@ -25,14 +25,16 @@ const initTest = (event) => {
     event.preventDefault();
     let fullData = event.currentTarget;
     let dataName = fullData.querySelector("#dataName");
-
+    const temaSaved = localStorage.getItem('temaFuture');
+    console.log(temaSaved)
     if (dataName) {
         let nameUser = dataName.value;
         $.ajax({
             url: "./controller/saveSession.php",
             method: "POST",
             data: {
-                nameUser
+                nameUser,
+                temaSaved
             },
             beforeSend: function () {
               // console.log('beforeSend')
