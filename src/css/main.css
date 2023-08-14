@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+.card-futuros {
+  margin: auto;
+  padding: 1em;
+  max-width: 920px;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+}
+
+hr.separate {
+  background: #712cf9;
+  width: 25%;
+  height: 2px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.dataImage {
+  height: 100vh;
+  image-rendering: auto;
+}
+
+.dataCuestionario {
+  position: relative;
+  display: grid;
+}
+
+/* NAVBAR */
+.navbar-future {
+  background-color: #712cf9;
+}
+.navbar-future .dataTime {
+  color: white;
+}
+
+.optionAnswer {
+  position: relative;
+}
+.optionAnswer .card {
+  margin: 10px;
+  height: 200px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.optionAnswer .card .card-title {
+  font-weight: 900;
+}
+.optionAnswer .card .card-text {
+  display: grid;
+  place-items: center;
+  height: 80%;
+}
+.optionAnswer .card:hover {
+  cursor: pointer;
+  background-color: rgba(219, 219, 219, 0.9);
+  transition: all 0.2s ease;
+}
+.optionAnswer .card:active {
+  cursor: pointer;
+  background-color: rgba(219, 219, 219, 0.9);
+}
+
+.selectoption {
+  transform: scale(1);
+  transform-origin: center;
+  background-color: rgba(219, 219, 219, 0.9);
+  animation: select-option 0.7s infinite;
+}
+@keyframes select-option {
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dataTest {
+  position: relative;
+  display: grid;
+}
+.dataTest .desplaceItems {
+  position: fixed;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  opacity: 0.5;
+}
+.dataTest .desplaceItems span {
+  position: absolute;
+}
+.dataTest .desplaceItems .desplaceRight {
+  right: 10px;
+}
+.dataTest .desplaceItems .desplaceLeft {
+  left: 10px;
+}
+.dataTest .desplaceItems a {
+  text-decoration: none;
+  font-size: 80px;
+  color: #712cf9;
+}
+
+#completeTest .dataFinishTest {
+  display: grid;
+  justify-content: center;
+}
+#completeTest .dataFinishTest > span {
+  margin: 0 10px 10px 0;
+}
+#completeTest .metaTest {
+  display: grid;
+  place-items: center;
+}
+#completeTest .metaTest .resultTest {
+  width: 18rem;
+  display: grid;
+  place-items: center;
+  border: none;
+}
+#completeTest .metaTest .resultTest .iconTest {
+  font-size: 12rem;
+}/*# sourceMappingURL=main.css.map */

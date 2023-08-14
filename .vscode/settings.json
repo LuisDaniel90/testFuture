@@ -1,0 +1,23 @@
+{
+    "editor.codeActionsOnSave": {
+
+    },
+
+    "liveSassCompile.settings.formats": [
+        {
+          "format": "expanded",
+          "extensionName": ".css",
+          "savePath": "/src/css" // Reemplaza esto con la ruta donde deseas guardar los archivos CSS compilados
+        },
+        {
+          "format": "compressed", // Utiliza "compressed" para generar archivos minificados
+          "extensionName": ".min.css",
+          "savePath": "/src/css" // Ruta para los archivos minificados
+        }
+      ],
+      "editor.formatOnSave": true
+
+
+    
+}
+

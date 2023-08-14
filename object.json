@@ -1,0 +1,110 @@
+{
+    "temas": [
+      {
+        "nombre": "Excel",
+        "preguntas": [
+          {
+            "preguntaIndex" : 0,
+            "pregunta": "¿Cómo se llama la función en Excel para sumar valores?",
+            "opciones": ["SUMA", "SUMAR", "ADD", "PLUS"],
+            "respuestaCorrecta": 0
+          },
+          {
+            "preguntaIndex" : 1,
+            "pregunta": "¿Qué es una celda en Excel?",
+            "opciones": ["Un gráfico", "Una hoja de trabajo", "Una fila", "La intersección de una fila y una columna"],
+            "respuestaCorrecta": 3
+          },
+          {
+            "preguntaIndex" : 2,
+            "pregunta": "¿Qué función se utiliza para combinar texto en Excel?",
+            "opciones": ["CONCATENAR", "UNIR", "COMBINAR", "SUMARTEXTO"],
+            "respuestaCorrecta": 0
+          },
+          {
+            "preguntaIndex" : 3,
+            "pregunta": "¿Cómo se realiza una referencia a una celda en Excel?",
+            "opciones": ["Celda(3,2)", "A3", "R3C2", "$A$3"],
+            "respuestaCorrecta": 1
+          },
+          {
+            "preguntaIndex" : 4,
+            "pregunta": "¿Cuál es el atajo de teclado para abrir el menú 'Formato de celdas' en Excel?",
+            "opciones": ["Ctrl + F", "Ctrl + Shift + C", "Ctrl + 1", "Alt + E"],
+            "respuestaCorrecta": 2
+          }
+        ]
+      },
+      {
+        "nombre": "Word",
+        "preguntas": [
+          {
+            "preguntaIndex" : 0,
+            "pregunta": "¿Qué es Microsoft Word?",
+            "opciones": ["Un navegador web", "Un programa de diseño gráfico", "Un procesador de textos", "Una herramienta de edición de videos"],
+            "respuestaCorrecta": 2
+          },
+          {
+            "preguntaIndex" : 1,
+            "pregunta": "¿Qué extensión de archivo se utiliza para los documentos de Word?",
+            "opciones": [".docx", ".txt", ".pdf", ".ppt"],
+            "respuestaCorrecta": 0
+          },
+          {
+            "preguntaIndex" : 2,
+            "pregunta": "¿Cómo se aplica negrita a un texto en Word?",
+            "opciones": ["Ctrl + N", "Ctrl + B", "Ctrl + I", "Ctrl + U"],
+            "respuestaCorrecta": 1
+          },
+          {
+            "preguntaIndex" : 3,
+            "pregunta": "¿Qué función realiza el comando 'Buscar y reemplazar' en Word?",
+            "opciones": ["Buscar un archivo en la computadora", "Encontrar errores en el texto", "Buscar una palabra y cambiarla por otra", "Buscar en internet"],
+            "respuestaCorrecta": 2
+          },
+          {
+            "preguntaIndex" : 4,
+            "pregunta": "¿Cómo se guarda un documento en Word?",
+            "opciones": ["Archivo > Guardar", "Ctrl + G", "Ctrl + S", "Ctrl + P"],
+            "respuestaCorrecta": 2
+          }
+        ]
+      },
+      {
+        "nombre": "Mantenimiento",
+        "preguntas": [
+          {
+            "preguntaIndex" : 0,
+            "pregunta": "¿Qué es la desfragmentación de disco?",
+            "opciones": ["Limpiar archivos temporales", "Reorganizar los archivos en el disco para mejorar la velocidad de acceso", "Eliminar virus", "Instalar actualizaciones"],
+            "respuestaCorrecta": 1
+          },
+          {
+            "preguntaIndex" : 1,
+            "pregunta": "¿Cuál es una buena práctica para mantener una computadora segura?",
+            "opciones": ["Compartir contraseñas con amigos cercanos", "Hacer clic en enlaces desconocidos", "Mantener el software antivirus actualizado", "Desactivar el firewall"],
+            "respuestaCorrecta": 2
+          },
+          {
+            "preguntaIndex" : 2,
+            "pregunta": "¿Qué es un respaldo de datos?",
+            "opciones": ["Hacer copias de seguridad de archivos importantes", "Eliminar archivos innecesarios", "Enviar correos electrónicos", "Crear nuevas cuentas de usuario"],
+            "respuestaCorrecta": 0
+          },
+          {
+            "preguntaIndex" : 3,
+            "pregunta": "¿Cuál es la forma correcta de limpiar la pantalla de una computadora?",
+            "opciones": ["Con un paño húmedo", "Con alcohol", "Con una aspiradora", "Con un paño suave y seco"],
+            "respuestaCorrecta": 3
+          },
+          {
+            "preguntaIndex" : 4,
+            "pregunta": "¿Qué es el phishing?",
+            "opciones": ["Un nuevo sistema operativo", "Un tipo de malware", "Una técnica de ingeniería social para obtener información personal", "Un juego en línea"],
+            "respuestaCorrecta": 2
+          }
+        ]
+      }
+    ]
+  }
+  
